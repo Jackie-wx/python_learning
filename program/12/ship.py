@@ -27,8 +27,8 @@ class Ship():
 		""" 根据移动标志调整飞船的位置 """
 		# 更新飞船的center值，而不是rect（矩形左上角为原点，右下角为最大点）
 		if self.moving_right and self.rect.right < self.screen_rect.right: 
-		# self.rect.right返回飞船外接矩形的右边缘的x坐标，如果这个值小于self.screen_rect.right，就说明
-		# 飞船未触及屏幕右边缘
+		# self.rect.right返回飞船外接矩形的右边缘的x坐标，如果这个值小于self.screen_rect.right，
+		# 就说明飞船未触及屏幕右边缘
 			self.center +=self.ai_settings.ship_speed_factor
 		if self.moving_left and self.rect.left > 0:
 		# 与右边类似，如果rect的左边缘的x坐标大于零，说明飞船未触及屏幕左边缘
