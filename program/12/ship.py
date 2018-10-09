@@ -17,8 +17,8 @@ class Ship():
 		self.rect.bottom = self.screen_rect.bottom
 		
 		# 在飞船的属性center中存储小数值
-		self.center = float(self.rect.centerx)
-		
+		self.center = float(self.rect.centerx)  # 因为ship_speed_factor存在小数，
+		                                        # 故需要将self.center变成float
 		# 移动标志
 		self.moving_right = False
 		self.moving_left = False
@@ -32,8 +32,8 @@ class Ship():
 			self.center -=self.ai_settings.ship_speed_factor
 		
 		# 根据self.center更新rect对象
-		self.rect.centerx = self.center
-	
+		self.rect.centerx = self.center  ## self.rect.centerx只存储self.center的整数部分，但对显示
+	                                     ## 飞船而言，这问题不大
 	def blitme(self):
 		""" 在指定位置绘制飞船 """
 		self.screen.blit(self.image,self.rect)
