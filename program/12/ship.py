@@ -1,4 +1,5 @@
-# 创建ship类
+# 创建ship类,包含方法__init__()、管理飞船位置的方法update()，
+# 以及在屏幕上绘制飞船的方法blitme()。
 import pygame
 
 class Ship():
